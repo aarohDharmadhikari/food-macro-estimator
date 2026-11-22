@@ -52,7 +52,7 @@ The web app has three pages:
 
 | Route | Page | Purpose |
 | --- | --- | --- |
-| `/` | Home and Food Scanner | Live camera scan or drag-and-drop upload, followed by the results dashboard |
+| `/home` | Home and Food Scanner | Live camera scan or drag-and-drop upload, followed by the results dashboard |
 | `/about` | The Problem and Mission | Scroll-animated explanation of why manual calorie tracking fails and how Vision plus OCR addresses it |
 | `/contributors` | Contributors | Profile cards for the people behind the project |
 
@@ -296,9 +296,8 @@ If you change `MAX_UPLOAD_MB`, also update the `MAX_MB` constant in `frontend/sr
 
 | | |
 | --- | --- |
-| Name | [Your Name] |
-| Role | [Your Role, for example Full-Stack Developer] |
-| Profile | [Your Profile Link] |
+| Name | Aaroh Dharmadhikari |
+| Role | Full-Stack Developer |
 
 <div align="center">
   <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:bf5af2,50:5e5ce6,100:0a84ff&height=120&section=footer" alt="Footer wave" />
