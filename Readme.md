@@ -1,23 +1,24 @@
 <div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0a84ff,50:5e5ce6,100:bf5af2&height=220&section=header&text=Macro%20Lens&fontSize=64&fontColor=ffffff&fontAlignY=38&desc=Food%20Calorie%20%26%20Macro%20Estimator&descSize=20&descAlignY=60&animation=fadeIn" alt="Macro Lens banner" />
+</div>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0a84ff,50:5e5ce6,100:bf5af2&height=220&section=header&text=Macro%20Lens&fontSize=64&fontColor=ffffff&fontAlignY=38&desc=Food%20Calorie%20%26%20Macro%20Estimator&descSize=20&descAlignY=60&animation=fadeIn" alt="Macro Lens banner" />
+<div align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3200&pause=1100&color=0A84FF&center=true&vCenter=true&width=760&lines=Snap+a+meal+or+a+nutrition+label;Vision+and+OCR+do+the+reading;Net+carbs+and+energy+density+calculated+exactly;Calories%2C+macros%2C+and+a+full+carbohydrate+breakdown" alt="Typing animation describing the project" />
+  </a>
+</div>
 
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3200&pause=1100&color=0A84FF&center=true&vCenter=true&width=760&lines=Snap+a+meal+or+a+nutrition+label;Vision+and+OCR+do+the+reading;Net+carbs+and+energy+density+calculated+exactly;Calories%2C+macros%2C+and+a+full+carbohydrate+breakdown" alt="Typing animation describing the project" />
-</a>
-
-<br />
-
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Pydantic](https://img.shields.io/badge/Pydantic-v2-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
-![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-
+<div align="center">
+  <br />
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/Pydantic-v2-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic" />
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+  <img src="https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Google Gemini" />
+  <img src="https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
 </div>
 
 ---
@@ -304,7 +305,5 @@ If you change `MAX_UPLOAD_MB`, also update the `MAX_MB` constant in `frontend/sr
 | Profile | [Your Profile Link] |
 
 <div align="center">
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:bf5af2,50:5e5ce6,100:0a84ff&height=120&section=footer" alt="Footer wave" />
-
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:bf5af2,50:5e5ce6,100:0a84ff&height=120&section=footer" alt="Footer wave" />
 </div>
