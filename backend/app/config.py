@@ -2,7 +2,7 @@
 
 from functools import lru_cache
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -17,11 +17,17 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.5-flash"
+    # Gemini Settings
+    gemini_api_key: Optional[str] = None
+    gemini_model: str = "gemini-1.5-flash"
+
     allowed_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
     max_upload_mb: int = 8
-    request_timeout_s: float = 60.0
+
+    @property
+    def use_mock(self) -> bool:
+        """Determines if we should use local logic fallback."""
+        return not bool(self.gemini_api_key)
 
     @property
     def origins(self) -> List[str]:
@@ -29,13 +35,11 @@ class Settings(BaseSettings):
         return [o.strip() for o in self.allowed_origins.split(",") if o.strip()]
 
     @property
-    def use_mock(self) -> bool:
-        """True when no API key is configured -> serve deterministic demo data."""
-        return not self.gemini_api_key.strip()
-
-    @property
     def max_upload_bytes(self) -> int:
         return self.max_upload_mb * 1024 * 1024
+
+
+settings = Settings()
 
 
 @lru_cache

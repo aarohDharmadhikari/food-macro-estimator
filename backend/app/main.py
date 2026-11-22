@@ -37,6 +37,6 @@ app.include_router(analyze.router)
 async def root():
     return {
         "name": "Food Calorie & Macro Estimator API",
-        "mode": "mock" if settings.use_mock else "gemini",
+        "mode": "production",
         "docs": "/docs",
     }

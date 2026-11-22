@@ -8,7 +8,6 @@ import { cn } from "../../lib/cn";
 const LINKS = [
   { to: "/", label: "Scanner", icon: ScanLine },
   { to: "/about", label: "Mission", icon: BookOpen },
-  { to: "/contributors", label: "Contributors", icon: Users },
 ];
 
 export default function Navbar() {

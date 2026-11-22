@@ -66,10 +66,11 @@ def copy_env_if_missing(folder: Path) -> None:
 def ensure_backend_deps() -> None:
     try:
         import fastapi  # noqa: F401
-        import httpx  # noqa: F401
         import multipart  # noqa: F401  (python-multipart)
         import pydantic_settings  # noqa: F401
         import uvicorn  # noqa: F401
+        import PIL  # noqa: F401
+        import google.generativeai  # noqa: F401
         return
     except ImportError:
         pass

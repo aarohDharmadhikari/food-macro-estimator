@@ -59,24 +59,24 @@ export default function About() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-24">
       {/* Intro */}
-      <section className="pb-20 pt-10 text-center sm:pt-16">
+      <section className="pb-10 pt-6 text-center sm:pt-10">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.1 }}
+          transition={{ delay: 0.05 }}
           className="text-sm font-semibold uppercase tracking-[0.2em] text-accent"
         >
           The Problem &amp; Our Mission
         </motion.p>
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
           className="mt-5 text-5xl font-semibold leading-[1.05] sm:text-7xl"
         >
           Counting calories
           <br />
-          <span className="text-gradient">shouldn&rsquo;t feel like homework.</span>
+          <span className="text-gradient">is broken.</span>
         </motion.h1>
       </section>
 
@@ -94,7 +94,7 @@ export default function About() {
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {PROBLEMS.map(({ icon: Icon, title, body }, i) => (
-            <Reveal key={title} delay={(i % 2) * 0.1}>
+            <Reveal key={title} delay={(i % 2) * 0.02}>
               <GlassCard hover className="h-full p-7">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-500/10 text-rose-500">
                   <Icon size={22} />
@@ -121,7 +121,7 @@ export default function About() {
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {STEPS.map(({ icon: Icon, title, body }, i) => (
-            <Reveal key={title} delay={i * 0.12}>
+            <Reveal key={title} delay={i * 0.04}>
               <GlassCard hover className="relative h-full overflow-hidden p-7">
                 <span className="absolute -right-2 -top-6 select-none text-[7rem] font-bold leading-none text-black/[0.04] dark:text-white/[0.05]">
                   {i + 1}

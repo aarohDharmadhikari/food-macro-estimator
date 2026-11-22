@@ -41,19 +41,19 @@ function initials(name) {
 export default function Contributors() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6 pb-24">
-      <section className="pb-14 pt-10 text-center sm:pt-16">
+      <section className="pb-10 pt-6 text-center sm:pt-10">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.1 }}
+          transition={{ delay: 0.05 }}
           className="text-sm font-semibold uppercase tracking-[0.2em] text-accent"
         >
           The Team
         </motion.p>
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="mt-5 text-5xl font-semibold leading-[1.05] sm:text-6xl"
         >
           Built by <span className="text-gradient">two people</span>
@@ -64,7 +64,7 @@ export default function Contributors() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {CONTRIBUTORS.map((c, i) => (
-          <Reveal key={c.name} delay={i * 0.12}>
+          <Reveal key={c.name} delay={i * 0.08}>
             <GlassCard hover className="h-full p-8">
               <div
                 className={`flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br ${c.gradient} text-2xl font-semibold text-white shadow-lg`}

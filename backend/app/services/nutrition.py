@@ -44,6 +44,11 @@ def build_result(raw: RawEstimate, mode: str) -> NutritionResult:
 
     confidence = min(1.0, max(0.0, float(raw.confidence)))
 
+    # Ensure professional note structure without mock disclaimers.
+    notes = raw.notes.strip()
+    if mode == "mock":
+        notes = f"[DEMO] {notes}"
+
     return NutritionResult(
         mode=mode,
         source_type="label" if raw.source_type.lower().startswith("label") else "meal",
@@ -64,5 +69,5 @@ def build_result(raw: RawEstimate, mode: str) -> NutritionResult:
         sugar_alcohols_g=sugar_alcohols,
         starch_g=_clean(raw.starch_g),
         net_carbs_g=net_carbs,
-        notes=raw.notes.strip(),
+        notes=notes,
     )

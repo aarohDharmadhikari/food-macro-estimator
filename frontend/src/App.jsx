@@ -9,7 +9,6 @@ import Footer from "./components/layout/Footer.jsx";
 
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
-import Contributors from "./pages/Contributors.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,10 +32,6 @@ export default function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<PageTransition><Home /></PageTransition>} />
             <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-            <Route
-              path="/contributors"
-              element={<PageTransition><Contributors /></PageTransition>}
-            />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AnimatePresence>
