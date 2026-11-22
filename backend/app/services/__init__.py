@@ -1,0 +1,1 @@
+"""Service layer: vision model client, mock data, nutrition maths."""
