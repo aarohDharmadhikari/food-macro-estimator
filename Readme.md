@@ -1,8 +1,4 @@
 <div align="center">
-  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0a84ff,50:5e5ce6,100:bf5af2&height=220&section=header&text=Macro%20Lens&fontSize=64&fontColor=ffffff&fontAlignY=38&desc=Food%20Calorie%20%26%20Macro%20Estimator&descSize=20&descAlignY=60&animation=fadeIn" alt="Macro Lens banner" />
-</div>
-
-<div align="center">
   <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3200&pause=1100&color=0A84FF&center=true&vCenter=true&width=760&lines=Snap+a+meal+or+a+nutrition+label;Vision+and+OCR+do+the+reading;Net+carbs+and+energy+density+calculated+exactly;Calories%2C+macros%2C+and+a+full+carbohydrate+breakdown" alt="Typing animation describing the project" />
   </a>
@@ -56,7 +52,7 @@ The web app has three pages:
 
 | Route | Page | Purpose |
 | --- | --- | --- |
-| `/` | Home and Food Scanner | Live camera scan or drag-and-drop upload, followed by the results dashboard |
+| `/home` | Home and Food Scanner | Live camera scan or drag-and-drop upload, followed by the results dashboard |
 | `/about` | The Problem and Mission | Scroll-animated explanation of why manual calorie tracking fails and how Vision plus OCR addresses it |
 | `/contributors` | Contributors | Profile cards for the people behind the project |
 
@@ -192,69 +188,6 @@ food-macro-estimator/
 
 ---
 
-## Setup and Run
-
-### Prerequisites
-
-- Python 3.10 or newer
-- Node.js 18 or newer (includes npm)
-- Optional: a Gemini API key from Google AI Studio for real analysis. Without one, the app runs in demo mode.
-
-### Option 1: One command
-
-Create and activate a virtual environment inside `backend`, then start both servers from the project root.
-
-Windows (PowerShell):
-
-```powershell
-cd backend
-python -m venv .venv
-.venv\Scripts\activate
-cd ..
-python main.py
-```
-
-macOS or Linux:
-
-```bash
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-cd ..
-python main.py
-```
-
-The launcher creates `backend/.env` and `frontend/.env` from their `.env.example` files if they are missing, installs backend dependencies and runs `npm install` on first use, starts uvicorn on port 8000 and Vite on port 5173, and opens `http://localhost:5173` once the frontend is ready. Press Ctrl+C to stop both servers. Optional flags are `--no-browser`, `--no-reload`, and `--skip-install`.
-
-### Option 2: Run each server manually
-
-Backend, in one terminal:
-
-```powershell
-cd backend
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-copy .env.example .env
-uvicorn app.main:app --reload --port 8000
-```
-
-Frontend, in a second terminal:
-
-```powershell
-cd frontend
-npm install
-copy .env.example .env
-npm run dev
-```
-
-On macOS or Linux, use `cp` instead of `copy` and `source .venv/bin/activate` instead of the Windows activation script.
-
-Then open:
-
-- App: `http://localhost:5173`
-- API docs: `http://localhost:8000/docs`
-- Health check: `http://localhost:8000/api/health`
 
 ### Using it
 
@@ -300,9 +233,8 @@ If you change `MAX_UPLOAD_MB`, also update the `MAX_MB` constant in `frontend/sr
 
 | | |
 | --- | --- |
-| Name | [Your Name] |
-| Role | [Your Role, for example Full-Stack Developer] |
-| Profile | [Your Profile Link] |
+| Name | Aaroh Dharmadhikari |
+| Role | Full-Stack Developer |
 
 <div align="center">
   <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:bf5af2,50:5e5ce6,100:0a84ff&height=120&section=footer" alt="Footer wave" />
