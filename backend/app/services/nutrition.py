@@ -7,7 +7,7 @@ density, fiber totals) is computed here so the formulas are always exact:
     Energy Density = Calories / Serving Weight (g)
 """
 
-from app.schemas import FiberBreakdown, NutritionResult, RawEstimate
+from app.schemas import FiberBreakdown, NutritionResult, RawEstimate, FoodItem
 
 
 def _clean(value: float) -> float:
@@ -49,11 +49,32 @@ def build_result(raw: RawEstimate, mode: str) -> NutritionResult:
     if mode == "mock":
         notes = f"[DEMO] {notes}"
 
+    # Clean foods list and ensure items have reasonable values
+    cleaned_foods = []
+    for item in raw.foods:
+        cleaned_foods.append(
+            FoodItem(
+                name=item.name.strip() or "Food item",
+                estimated_weight_g=_clean(item.estimated_weight_g),
+                calories_kcal=_clean(item.calories_kcal),
+                protein_g=_clean(item.protein_g),
+                fat_g=_clean(item.fat_g),
+                carbs_g=_clean(item.carbs_g),
+                portion_desc=item.portion_desc.strip(),
+                contents=[c.strip() for c in item.contents if c.strip()],
+            )
+        )
+
+    dish_type = raw.dish_type.strip() or ("Nutrition Label" if raw.source_type.lower().startswith("label") else "Plated Meal")
+    cuisine = raw.cuisine.strip() or "International"
+
     return NutritionResult(
         mode=mode,
         source_type="label" if raw.source_type.lower().startswith("label") else "meal",
+        dish_type=dish_type,
+        cuisine=cuisine,
         display_name=_display_name(raw),
-        foods=raw.foods,
+        foods=cleaned_foods,
         confidence=round(confidence, 2),
         serving_weight_g=weight,
         calories_kcal=calories,

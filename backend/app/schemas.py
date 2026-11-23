@@ -4,8 +4,7 @@ RawEstimate  -> what the vision model returns (validated, not trusted).
 NutritionResult -> what the API returns to the frontend (adds derived metrics).
 """
 
-from typing import List
-
+from typing import List, Optional
 from pydantic import BaseModel, Field
 
 
@@ -13,12 +12,19 @@ class FoodItem(BaseModel):
     name: str
     estimated_weight_g: float = 0.0
     calories_kcal: float = 0.0
+    protein_g: float = 0.0
+    fat_g: float = 0.0
+    carbs_g: float = 0.0
+    portion_desc: str = ""
+    contents: List[str] = Field(default_factory=list)
 
 
 class RawEstimate(BaseModel):
     """Structured JSON extracted by the vision / OCR model."""
 
     source_type: str = "meal"  # "meal" or "label"
+    dish_type: str = "Plated Dish"  # e.g., "Main Course", "Bowl", "Salad", "Beverage"
+    cuisine: str = "Global"  # e.g., "Indian", "Japanese", "Mediterranean", "American"
     foods: List[FoodItem] = Field(default_factory=list)
     confidence: float = 0.5  # 0..1
     serving_weight_g: float = 0.0
@@ -47,6 +53,8 @@ class NutritionResult(BaseModel):
 
     mode: str  # "gemini" or "mock"
     source_type: str  # "meal" or "label"
+    dish_type: str = "Plated Dish"
+    cuisine: str = "Global"
     display_name: str
     foods: List[FoodItem]
     confidence: float  # 0..1

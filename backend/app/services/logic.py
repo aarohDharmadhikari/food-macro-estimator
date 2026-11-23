@@ -640,15 +640,32 @@ def analyze_food_image(image_bytes: bytes, filename: str = "") -> RawEstimate:
         return round(val * variance, 1)
 
     scaled_foods = []
+    total_f_cals = sum(f.get("calories_kcal", 0) for f in matched_profile["foods"]) or 1.0
     for f in matched_profile["foods"]:
+        ratio = f.get("calories_kcal", 0) / total_f_cals
+        item_weight = scale(f.get("estimated_weight_g", 0))
+        item_cals = scale(f.get("calories_kcal", 0))
+        item_prot = round(scale(matched_profile["protein_g"]) * ratio, 1)
+        item_fat = round(scale(matched_profile["total_fat_g"]) * ratio, 1)
+        item_carbs = round(scale(matched_profile["total_carbs_g"]) * ratio, 1)
         scaled_foods.append(FoodItem(
             name=f["name"],
-            estimated_weight_g=scale(f["estimated_weight_g"]),
-            calories_kcal=scale(f["calories_kcal"])
+            estimated_weight_g=item_weight,
+            calories_kcal=item_cals,
+            protein_g=item_prot,
+            fat_g=item_fat,
+            carbs_g=item_carbs,
+            portion_desc=f"{int(item_weight)}g portion",
+            contents=f.get("contents", matched_profile.get("keywords", []))
         ))
+
+    dish_type = matched_profile.get("dish_type", "Main Course" if matched_profile["source_type"] == "meal" else "Nutrition Facts Label")
+    cuisine = matched_profile.get("cuisine", "Traditional / Global")
 
     return RawEstimate(
         source_type=matched_profile["source_type"],
+        dish_type=dish_type,
+        cuisine=cuisine,
         foods=scaled_foods,
         confidence=round(rng.uniform(0.86, 0.97), 2),
         serving_weight_g=scale(matched_profile["serving_weight_g"]),

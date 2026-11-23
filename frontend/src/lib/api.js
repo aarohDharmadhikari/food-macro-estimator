@@ -15,11 +15,12 @@ async function readError(response) {
   return `Request failed (HTTP ${response.status}).`;
 }
 
-/** Sends an image File/Blob to the backend and returns the NutritionResult JSON. */
-export async function analyzeImage(file) {
+/** Sends an image File/Blob and engine choice to the backend and returns the NutritionResult JSON. */
+export async function analyzeImage(file, engine = "online") {
   const form = new FormData();
   const name = file.name || "capture.jpg";
   form.append("image", file, name);
+  form.append("engine", engine);
 
   let response;
   try {
@@ -32,7 +33,7 @@ export async function analyzeImage(file) {
   return response.json();
 }
 
-/** Returns { status, mode: "mock" | "gemini", model } or null if the backend is down. */
+/** Returns { status, mode, model, online_available, local_available } or null if backend is down. */
 export async function fetchHealth() {
   try {
     const response = await fetch(`${BASE}/api/health`);
